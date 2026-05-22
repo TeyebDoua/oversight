@@ -1,0 +1,11 @@
+category,industry_avg_variance_pct,industry_red_flag_rate,industry_n_companies,source_note
+ECL Stage 1,5.2,0.08,124,"Aggregate of bank loan loss data, public filings 2020-2024"
+ECL Stage 2,8.7,0.18,118,"Aggregate of bank loan loss data, public filings 2020-2024"
+ECL Stage 3,12.3,0.22,98,"Aggregate of bank loan loss data, public filings 2020-2024"
+Warranty provision,6.8,0.12,210,"SEC filings, manufacturing sector 2020-2024"
+Inventory NRV,4.5,0.07,340,"SEC filings, mixed sectors 2020-2024"
+Litigation provision,9.4,0.15,180,"SEC filings, mixed sectors 2020-2024"
+Goodwill impairment,11.2,0.20,156,"SEC filings, mixed sectors 2020-2024"
+Deferred tax,7.1,0.11,290,"SEC filings, mixed sectors 2020-2024"
+Insurance claims reserve,8.9,0.19,200,"CAS Loss Reserve Database illustrative aggregate"
+Restructuring provision,13.6,0.24,95,"SEC filings, mixed sectors 2020-2024"
