@@ -15,7 +15,6 @@ from reportlab.lib.enums import TA_LEFT, TA_CENTER
 
 from analysis import (
     compute_variance, detect_bias_pattern, load_and_analyse,
-    load_benchmark, compare_to_benchmark,
 )
 
 
@@ -429,7 +428,7 @@ materiality = st.sidebar.number_input(
 )
 
 
-benchmark = load_benchmark("industry_benchmarks.csv")
+
 
 
 def load_companies():
@@ -777,8 +776,8 @@ with col5:
     st.metric("Below materiality", below_count)
 
 
-tab_overview, tab_benchmark, tab_multi, tab_detail, tab_methodology = st.tabs(
-    ["OVERVIEW", "BENCHMARK", "PORTFOLIO", "DETAIL", "METHODOLOGY"]
+tab_overview, tab_multi, tab_detail, tab_methodology = st.tabs(
+    ["OVERVIEW", "PORTFOLIO", "DETAIL", "METHODOLOGY"]
 )
 
 
@@ -872,118 +871,6 @@ with tab_overview:
         st.plotly_chart(fig, use_container_width=True)
 
 
-with tab_benchmark:
-    st.markdown('<div class="section-header">Industry Benchmark Comparison</div>', unsafe_allow_html=True)
-    st.markdown(
-        '<div class="section-subtitle">Compares the active company against industry benchmark '
-        'data for each estimate category.</div>',
-        unsafe_allow_html=True,
-    )
-
-    if len(benchmark) == 0:
-        st.warning("No benchmark dataset found. Ensure `industry_benchmarks.csv` exists in the project folder.")
-    elif len(filtered_summary) == 0:
-        st.info("No estimates match the current filters.")
-    else:
-        comparison = compare_to_benchmark(filtered_summary, benchmark)
-
-        if len(comparison) == 0:
-            st.info("No comparison data available.")
-        else:
-            comparison_display = comparison[[
-                "category", "company_estimate_count",
-                "company_avg_variance_pct", "industry_avg_variance_pct",
-                "variance_delta",
-                "company_red_flag_rate", "industry_red_flag_rate",
-                "flag_rate_delta",
-                "verdict",
-            ]].copy()
-
-            comparison_display.columns = [
-                "Category", "Company estimates",
-                "Company avg variance %", "Industry avg variance %",
-                "Δ variance",
-                "Company red flag rate", "Industry red flag rate",
-                "Δ flag rate",
-                "Verdict",
-            ]
-
-            comparison_display["Company red flag rate"] = comparison_display[
-                "Company red flag rate"
-            ].apply(lambda x: f"{x*100:.0f}%")
-
-            comparison_display["Industry red flag rate"] = comparison_display[
-                "Industry red flag rate"
-            ].apply(lambda x: f"{x*100:.0f}%" if pd.notna(x) else "—")
-
-            comparison_display["Industry avg variance %"] = comparison_display[
-                "Industry avg variance %"
-            ].apply(lambda x: f"{x:.1f}" if pd.notna(x) else "—")
-
-            comparison_display["Δ variance"] = comparison_display["Δ variance"].apply(
-                lambda x: f"{x:+.1f}" if pd.notna(x) else "—"
-            )
-
-            comparison_display["Δ flag rate"] = comparison_display["Δ flag rate"].apply(
-                lambda x: f"{x*100:+.0f} pp" if pd.notna(x) else "—"
-            )
-
-            def colour_verdict(val):
-                if val == "Worse than industry":
-                    return "background-color: #dc2626; color: white; font-weight: bold;"
-                elif val == "Better than industry":
-                    return "background-color: #10b981; color: white;"
-                elif val == "In line with industry":
-                    return "background-color: #650117; color: white;"
-                else:
-                    return "background-color: #6b7280; color: white;"
-
-            styled_comparison = comparison_display.style.map(colour_verdict, subset=["Verdict"])
-            st.dataframe(styled_comparison, use_container_width=True, hide_index=True)
-
-            st.markdown('<div class="section-header">Variance Gap</div>', unsafe_allow_html=True)
-            chart_df = comparison[comparison["industry_avg_variance_pct"].notna()].copy()
-            if len(chart_df) > 0:
-                long_df = pd.melt(
-                    chart_df,
-                    id_vars=["category"],
-                    value_vars=["company_avg_variance_pct", "industry_avg_variance_pct"],
-                    var_name="source",
-                    value_name="variance_pct",
-                )
-                long_df["source"] = long_df["source"].replace({
-                    "company_avg_variance_pct": "Company",
-                    "industry_avg_variance_pct": "Industry",
-                })
-
-                gap_fig = px.bar(
-                    long_df,
-                    x="category", y="variance_pct",
-                    color="source", barmode="group",
-                    color_discrete_map={"Company": "#C2415A", "Industry": "#8a6a72"},
-                    labels={"variance_pct": "Average variance (%)", "category": "Estimate category", "source": ""},
-                )
-                gap_fig.update_layout(
-                    plot_bgcolor="#1a0d10",
-                    paper_bgcolor="#0d0608",
-                    font_color="#f0e6e8",
-                    height=380,
-                    legend_title_text="",
-                )
-                gap_fig.update_xaxes(gridcolor="#3a1f25")
-                gap_fig.update_yaxes(gridcolor="#3a1f25")
-                st.plotly_chart(gap_fig, use_container_width=True)
-
-            st.divider()
-            with st.expander("Benchmark sources"):
-                source_df = benchmark[["category", "industry_n_companies", "source_note"]].copy()
-                source_df.columns = ["Category", "Sample size", "Source"]
-                st.dataframe(source_df, use_container_width=True, hide_index=True)
-                st.caption(
-                    "Note: the current benchmark dataset is illustrative. In production, the tool "
-                    "would connect to authoritative sources such as the CAS Loss Reserve Database, "
-                    "FFIEC Call Reports, or SEC XBRL filings."
-                )
 
 
 with tab_multi:
@@ -1369,12 +1256,7 @@ with tab_methodology:
         | Amber | 3 of 4 same direction, or mixed with avg variance > 15%, material | Partial pattern, document |
         | Green | Otherwise (material but no pattern) | No bias pattern detected |
 
-        ### Industry benchmarking
-
-        When `industry_benchmarks.csv` is present, OVERSIGHT compares the company's
-        bias patterns to industry-level statistics for each estimate category and
-        produces one of three verdicts: *Worse than industry*, *In line with industry*,
-        or *Better than industry*.
+       
 
         ### Portfolio-level view
 
