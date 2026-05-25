@@ -254,7 +254,7 @@ st.markdown(f"""
 
     .oversight-footer {{
         text-align: center;
-        color: #5c7characters;
+        color: #5c7a9c;
         font-size: 11px;
         letter-spacing: 1px;
         margin-top: 40px;
@@ -862,7 +862,7 @@ with tab_overview:
             paper_bgcolor="#05080d",
             font_color="#eef2f7",
         )
-        fig.add_hline(y=0, line_dash="dash", line_color="#5c7characters")
+        fig.add_hline(y=0, line_dash="dash", line_color="#5c7a9c")
         fig.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
         fig.update_xaxes(dtick=1, gridcolor="#13243a")
         fig.update_yaxes(matches=None, gridcolor="#13243a")
@@ -1132,7 +1132,7 @@ with tab_detail:
                 markers=True,
                 labels={"fy": "Fiscal year", "variance_pct": "Variance (%)"},
             )
-            detail_fig.add_hline(y=0, line_dash="dash", line_color="#5c7characters")
+            detail_fig.add_hline(y=0, line_dash="dash", line_color="#5c7a9c")
             detail_fig.update_traces(line=dict(color=flag_color, width=3))
             detail_fig.update_xaxes(dtick=1, gridcolor="#13243a")
             detail_fig.update_yaxes(gridcolor="#13243a")
