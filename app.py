@@ -368,7 +368,7 @@ col3.metric("Amber flags", amber_count, delta=f"{amber_pct:.0f}% of total", delt
 col4.metric("Green", green_count, delta=f"{green_pct:.0f}% of total", delta_color="off")
 col5.metric("Below materiality", below_count)
 
-tab_overview, tab_multi, tab_detail, tab_methodology = st.tabs(["OVERVIEW", "PORTFOLIO", "DETAIL", "METHODOLOGY"])
+tab_overview, tab_detail, tab_multi, tab_methodology = st.tabs(["OVERVIEW", "DETAIL", "PORTFOLIO", "METHODOLOGY"])
 
 with tab_overview:
     st.markdown('<div class="section-header">Bias Pattern Summary</div>', unsafe_allow_html=True)
