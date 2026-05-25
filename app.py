@@ -47,7 +47,7 @@ st.markdown(f"""
     }}
 
     .hero {{
-        background: linear-gradient(135deg, #3D000E 0%, #650117 55%, #8B0A2A 100%);
+        background: linear-gradient(135deg, #001f3f 0%, #5b3e0f 55%, #0a3a6b 100%);
         padding: 26px 40px;
         border-radius: 14px;
         margin-bottom: 24px;
@@ -74,7 +74,7 @@ st.markdown(f"""
         flex-grow: 1;
     }}
     .hero-tagline {{
-        color: #f0d4da;
+        color: #e8c468;
         font-size: 16px;
         margin: 0;
         font-weight: 300;
@@ -91,16 +91,16 @@ st.markdown(f"""
     }}
 
     .section-header {{
-        color: #f0e6e8;
+        color: #eef2f7;
         font-size: 22px;
         font-weight: 700;
         margin: 24px 0 8px 0;
         padding-left: 12px;
-        border-left: 4px solid #C2415A;
+        border-left: 4px solid #c9962e;
         letter-spacing: 0.5px;
     }}
     .section-subtitle {{
-        color: #b08a92;
+        color: #8fa3bd;
         font-size: 14px;
         font-weight: 400;
         margin-bottom: 16px;
@@ -110,39 +110,39 @@ st.markdown(f"""
     [data-testid="stMetricValue"] {{
         font-size: 32px !important;
         font-weight: 700 !important;
-        color: #f0e6e8 !important;
+        color: #eef2f7 !important;
     }}
     [data-testid="stMetricLabel"] {{
         font-size: 12px !important;
         text-transform: uppercase !important;
         letter-spacing: 1.5px !important;
-        color: #b08a92 !important;
+        color: #8fa3bd !important;
         font-weight: 500 !important;
     }}
     [data-testid="stMetricDelta"] {{
         font-size: 13px !important;
     }}
     [data-testid="metric-container"] {{
-        background: #1a0d10;
-        border: 1px solid #3a1f25;
-        border-top: 3px solid #650117;
+        background: #0a1420;
+        border: 1px solid #13243a;
+        border-top: 3px solid #5b3e0f;
         border-radius: 8px;
         padding: 16px 20px;
         box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }}
     [data-testid="metric-container"]:hover {{
-        border-top-color: #C2415A;
+        border-top-color: #c9962e;
         transition: border-top-color 0.3s ease;
     }}
 
     [data-testid="stTabs"] [data-baseweb="tab-list"] {{
         gap: 4px;
-        border-bottom: 1px solid #3a1f25;
+        border-bottom: 1px solid #13243a;
         margin-bottom: 24px;
     }}
     [data-testid="stTabs"] [data-baseweb="tab"] {{
         background: transparent;
-        color: #b08a92;
+        color: #8fa3bd;
         font-size: 14px;
         font-weight: 600;
         letter-spacing: 1px;
@@ -152,18 +152,18 @@ st.markdown(f"""
         transition: all 0.2s ease;
     }}
     [data-testid="stTabs"] [data-baseweb="tab"]:hover {{
-        color: #f0e6e8;
+        color: #eef2f7;
         background: rgba(194, 65, 90, 0.06);
     }}
     [data-testid="stTabs"] [aria-selected="true"] {{
-        color: #C2415A !important;
-        border-bottom: 3px solid #C2415A !important;
+        color: #c9962e !important;
+        border-bottom: 3px solid #c9962e !important;
         background: transparent !important;
     }}
 
     [data-testid="stSidebar"] {{
         background: #0a0406;
-        border-right: 1px solid #3a1f25;
+        border-right: 1px solid #13243a;
     }}
     .sidebar-logo-card {{
         background: #f4eef0;
@@ -180,18 +180,18 @@ st.markdown(f"""
         margin: 0 auto;
     }}
     [data-testid="stSidebar"] h2 {{
-        color: #C2415A !important;
+        color: #c9962e !important;
         font-size: 11px !important;
         text-transform: uppercase !important;
         letter-spacing: 2px !important;
         font-weight: 700 !important;
         margin-top: 16px !important;
         padding-bottom: 4px !important;
-        border-bottom: 1px solid #3a1f25 !important;
+        border-bottom: 1px solid #13243a !important;
     }}
 
     .stDownloadButton button, .stButton button {{
-        background: linear-gradient(135deg, #650117, #8B0A2A);
+        background: linear-gradient(135deg, #5b3e0f, #0a3a6b);
         color: white !important;
         font-weight: 600 !important;
         letter-spacing: 0.5px !important;
@@ -202,21 +202,21 @@ st.markdown(f"""
         box-shadow: 0 2px 8px rgba(101, 1, 23, 0.4);
     }}
     .stDownloadButton button:hover, .stButton button:hover {{
-        background: linear-gradient(135deg, #8B0A2A, #C2415A) !important;
+        background: linear-gradient(135deg, #0a3a6b, #c9962e) !important;
         box-shadow: 0 4px 12px rgba(194, 65, 90, 0.5) !important;
         transform: translateY(-1px);
     }}
 
     [data-testid="stDataFrame"] {{
-        border: 1px solid #3a1f25;
+        border: 1px solid #13243a;
         border-radius: 8px;
         overflow: hidden;
     }}
 
-    hr {{ border-color: #3a1f25 !important; }}
+    hr {{ border-color: #13243a !important; }}
 
     .active-strip {{
-        background: linear-gradient(135deg, #3D000E 0%, #650117 100%);
+        background: linear-gradient(135deg, #001f3f 0%, #5b3e0f 100%);
         color: #ffffff;
         padding: 14px 22px;
         border-radius: 8px;
@@ -247,26 +247,26 @@ st.markdown(f"""
     }}
 
     [data-testid="stExpander"] {{
-        border: 1px solid #3a1f25;
+        border: 1px solid #13243a;
         border-radius: 8px;
-        background: #1a0d10;
+        background: #0a1420;
     }}
 
     .oversight-footer {{
         text-align: center;
-        color: #8a6a72;
+        color: #5c7characters;
         font-size: 11px;
         letter-spacing: 1px;
         margin-top: 40px;
         padding-top: 20px;
-        border-top: 1px solid #3a1f25;
+        border-top: 1px solid #13243a;
         text-transform: uppercase;
     }}
     .oversight-footer-brand {{
         font-family: 'Playfair Display', Georgia, serif;
         font-style: italic;
         font-weight: 900;
-        color: #C2415A;
+        color: #c9962e;
         letter-spacing: 2px;
         font-size: 14px;
     }}
@@ -275,8 +275,8 @@ st.markdown(f"""
     .login-wrap {{
         max-width: 420px;
         margin: 6vh auto 0 auto;
-        background: linear-gradient(160deg, #1a0d10 0%, #0d0608 100%);
-        border: 1px solid #3a1f25;
+        background: linear-gradient(160deg, #0a1420 0%, #05080d 100%);
+        border: 1px solid #13243a;
         border-radius: 16px;
         padding: 36px 36px 30px 36px;
         box-shadow: 0 16px 50px rgba(0,0,0,0.5);
@@ -292,7 +292,7 @@ st.markdown(f"""
     }}
     .login-logo-card img {{ height: 70px; display: block; }}
     .login-sub {{
-        color: #b08a92;
+        color: #8fa3bd;
         font-size: 13px;
         letter-spacing: 1px;
         margin-bottom: 26px;
@@ -326,7 +326,7 @@ def render_login():
         except Exception:
             st.markdown("## OVERSIGHT")
         st.markdown(
-            '<div style="text-align:center; color:#b08a92; font-size:13px; '
+            '<div style="text-align:center; color:#8fa3bd; font-size:13px; '
             'letter-spacing:1px; margin-bottom:20px;">'
             'Audit-grade retrospective review of accounting estimates</div>',
             unsafe_allow_html=True,
@@ -367,10 +367,10 @@ with hero_col1:
 with hero_col2:
     st.markdown("""
     <div style="padding-top: 18px;">
-        <p style="color:#f0d4da; font-size:18px; font-weight:300; letter-spacing:1px; margin:0;">
+        <p style="color:#e8c468; font-size:18px; font-weight:300; letter-spacing:1px; margin:0;">
             Audit-grade retrospective review of accounting estimates
         </p>
-        <p style="color:#b08a92; font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-top:10px;">
+        <p style="color:#8fa3bd; font-size:11px; letter-spacing:2px; text-transform:uppercase; margin-top:10px;">
             ◆ ISA 540 (Revised) operationalisation · Pattern detection · Statistical significance · Industry benchmarking
         </p>
     </div>
@@ -560,13 +560,13 @@ def generate_working_paper_pdf(company_name, estimate_summary, estimate_history,
 
     styles = getSampleStyleSheet()
     title_style = ParagraphStyle("Title", parent=styles["Heading1"], fontSize=18,
-        textColor=colors.HexColor("#650117"), spaceAfter=4, alignment=TA_LEFT, leading=22)
+        textColor=colors.HexColor("#5b3e0f"), spaceAfter=4, alignment=TA_LEFT, leading=22)
     brand_style = ParagraphStyle("Brand", parent=styles["Normal"], fontSize=11,
-        textColor=colors.HexColor("#C2415A"), spaceAfter=4, fontName="Helvetica-Bold")
+        textColor=colors.HexColor("#c9962e"), spaceAfter=4, fontName="Helvetica-Bold")
     subtitle_style = ParagraphStyle("Subtitle", parent=styles["Normal"], fontSize=10,
         textColor=colors.HexColor("#666666"), spaceAfter=14)
     section_style = ParagraphStyle("Section", parent=styles["Heading3"], fontSize=11,
-        textColor=colors.HexColor("#650117"), spaceBefore=8, spaceAfter=4)
+        textColor=colors.HexColor("#5b3e0f"), spaceBefore=8, spaceAfter=4)
     body_style = ParagraphStyle("Body", parent=styles["Normal"], fontSize=9.5, leading=13, spaceAfter=6)
 
     flag = estimate_summary["flag"]
@@ -650,7 +650,7 @@ def generate_working_paper_pdf(company_name, estimate_summary, estimate_history,
         2.4 * cm, 3.3 * cm, 3.3 * cm, 2.8 * cm, 2.0 * cm, 2.2 * cm
     ])
     history_table.setStyle(TableStyle([
-        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#650117")),
+        ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#5b3e0f")),
         ("TEXTCOLOR", (0, 0), (-1, 0), colors.white),
         ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
         ("FONTSIZE", (0, 0), (-1, -1), 8.5),
@@ -858,14 +858,14 @@ with tab_overview:
         )
 
         fig.update_layout(
-            plot_bgcolor="#1a0d10",
-            paper_bgcolor="#0d0608",
-            font_color="#f0e6e8",
+            plot_bgcolor="#0a1420",
+            paper_bgcolor="#05080d",
+            font_color="#eef2f7",
         )
-        fig.add_hline(y=0, line_dash="dash", line_color="#8a6a72")
+        fig.add_hline(y=0, line_dash="dash", line_color="#5c7characters")
         fig.for_each_annotation(lambda a: a.update(text=a.text.split("=")[-1]))
-        fig.update_xaxes(dtick=1, gridcolor="#3a1f25")
-        fig.update_yaxes(matches=None, gridcolor="#3a1f25")
+        fig.update_xaxes(dtick=1, gridcolor="#13243a")
+        fig.update_yaxes(matches=None, gridcolor="#13243a")
         fig.update_layout(showlegend=True, legend_title_text="Flag")
 
         st.plotly_chart(fig, use_container_width=True)
@@ -964,14 +964,14 @@ with tab_multi:
             labels={"Risk score": "Risk score (weighted)", "Company": ""},
         )
         rank_fig.update_layout(
-            plot_bgcolor="#1a0d10",
-            paper_bgcolor="#0d0608",
-            font_color="#f0e6e8",
+            plot_bgcolor="#0a1420",
+            paper_bgcolor="#05080d",
+            font_color="#eef2f7",
             height=max(300, 60 * len(portfolio_df)),
             coloraxis_showscale=False,
         )
-        rank_fig.update_xaxes(gridcolor="#3a1f25")
-        rank_fig.update_yaxes(categoryorder="total ascending", gridcolor="#3a1f25")
+        rank_fig.update_xaxes(gridcolor="#13243a")
+        rank_fig.update_yaxes(categoryorder="total ascending", gridcolor="#13243a")
         st.plotly_chart(rank_fig, use_container_width=True)
 
         st.markdown('<div class="section-header">Categories With Bias Across Portfolio</div>', unsafe_allow_html=True)
@@ -1068,19 +1068,19 @@ with tab_detail:
 
         if p_val < 0.05:
             p_box_color = "#2a0810"
-            p_border = "#C2415A"
+            p_border = "#c9962e"
         elif p_val < 0.10:
             p_box_color = "#1f0a10"
-            p_border = "#650117"
+            p_border = "#5b3e0f"
         else:
-            p_box_color = "#1a0d10"
+            p_box_color = "#0a1420"
             p_border = "#6b7280"
 
         st.markdown(
             f"""
             <div style="background-color: {p_box_color}; border-left: 4px solid {p_border};
                         padding: 12px 16px; border-radius: 4px; margin-bottom: 14px;
-                        font-size: 14px; color: #f0e6e8;">
+                        font-size: 14px; color: #eef2f7;">
                 <b>Statistical significance:</b> p-value = {p_val:.4f}<br>
                 <i style="color: #c9a6ad;">{p_text}</i>
             </div>
@@ -1132,14 +1132,14 @@ with tab_detail:
                 markers=True,
                 labels={"fy": "Fiscal year", "variance_pct": "Variance (%)"},
             )
-            detail_fig.add_hline(y=0, line_dash="dash", line_color="#8a6a72")
+            detail_fig.add_hline(y=0, line_dash="dash", line_color="#5c7characters")
             detail_fig.update_traces(line=dict(color=flag_color, width=3))
-            detail_fig.update_xaxes(dtick=1, gridcolor="#3a1f25")
-            detail_fig.update_yaxes(gridcolor="#3a1f25")
+            detail_fig.update_xaxes(dtick=1, gridcolor="#13243a")
+            detail_fig.update_yaxes(gridcolor="#13243a")
             detail_fig.update_layout(
-                plot_bgcolor="#1a0d10",
-                paper_bgcolor="#0d0608",
-                font_color="#f0e6e8",
+                plot_bgcolor="#0a1420",
+                paper_bgcolor="#05080d",
+                font_color="#eef2f7",
                 height=300,
                 margin=dict(t=20, b=20),
             )
